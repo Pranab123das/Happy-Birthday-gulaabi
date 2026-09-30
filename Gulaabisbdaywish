@@ -1,0 +1,1510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>For My Gulabii ❤️</title>
+
+<style>
+
+/* =========================================================
+   BASIC RESET
+========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    min-height:100vh;
+
+    background:linear-gradient(
+        -45deg,
+        #030712,
+        #1a1038,
+        #37125c,
+        #5d194f,
+        #1b1038,
+        #030712
+    );
+
+    background-size:600% 600%;
+
+    animation:galaxy 18s ease infinite;
+
+    overflow:hidden;
+
+    color:white;
+
+}
+
+
+/* =========================================================
+   GALAXY BACKGROUND
+========================================================= */
+
+@keyframes galaxy{
+
+    0%{
+        background-position:0% 50%;
+    }
+
+    50%{
+        background-position:100% 50%;
+    }
+
+    100%{
+        background-position:0% 50%;
+    }
+
+}
+
+
+/* =========================================================
+   PAGES
+========================================================= */
+
+.page{
+
+    position:absolute;
+
+    width:100%;
+    height:100vh;
+
+    left:0;
+    top:0;
+
+    display:none;
+
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    padding:30px;
+
+    overflow-y:auto;
+
+    animation:pageFade .8s ease;
+
+    z-index:10;
+
+}
+
+.page.active{
+    display:flex;
+}
+
+@keyframes pageFade{
+
+    from{
+        opacity:0;
+        transform:scale(.97);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h1{
+
+    font-size:clamp(2.2rem,7vw,3.5rem);
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 10px #ff8ec8,
+        0 0 25px #ff5ca8,
+        0 0 45px #ff2d7a;
+
+}
+
+h2{
+
+    font-size:clamp(1.8rem,6vw,2.5rem);
+
+    margin-bottom:20px;
+
+    color:#fff;
+
+    text-shadow:
+        0 0 10px #ff8ec8,
+        0 0 25px #ff5ca8;
+
+}
+
+
+/* =========================================================
+   PARAGRAPHS
+========================================================= */
+
+p{
+
+    max-width:720px;
+
+    margin:8px auto;
+
+    padding:7px 10px;
+
+    font-size:1.15rem;
+
+    line-height:1.8;
+
+    /*
+       NO BOX / NO DARK BACKGROUND
+    */
+
+    background:transparent;
+
+    border:none;
+
+    box-shadow:none;
+
+    backdrop-filter:none;
+
+    /*
+       DEEP PINK → LIGHT PINK
+       BUT STILL DARK ENOUGH TO READ
+    */
+
+    color:#ff4f9a;
+
+    text-shadow:
+        0 0 2px #ff006e,
+        0 0 6px rgba(255,70,150,.65);
+
+}
+
+
+/* special small paragraph */
+
+.softText{
+
+    color:#ff79b7;
+
+    font-size:1.05rem;
+
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+button{
+
+    padding:15px 30px;
+
+    margin:12px;
+
+    font-size:19px;
+
+    font-weight:bold;
+
+    border:none;
+
+    border-radius:50px;
+
+    cursor:pointer;
+
+    color:white;
+
+    transition:
+        transform .3s ease,
+        box-shadow .3s ease;
+
+    -webkit-tap-highlight-color:transparent;
+
+}
+
+button:hover{
+
+    transform:scale(1.07);
+
+}
+
+button:active{
+
+    transform:scale(.96);
+
+}
+
+
+/* General pink gradient */
+
+.nextBtn{
+
+    background:linear-gradient(
+        135deg,
+        #c2185b,
+        #e83e8c,
+        #ff6fb1
+    );
+
+    box-shadow:
+        0 0 15px rgba(255,70,150,.45);
+
+}
+
+
+/* YES */
+
+#yes,
+#yes2{
+
+    background:linear-gradient(
+        135deg,
+        #d4145a,
+        #ed4b9b,
+        #ff79bd
+    );
+
+    color:white;
+
+    box-shadow:
+        0 0 18px rgba(255,80,170,.65);
+
+    animation:yesGlow 2s infinite alternate;
+
+}
+
+@keyframes yesGlow{
+
+    from{
+
+        box-shadow:
+            0 0 12px #ff5ca8;
+
+    }
+
+    to{
+
+        box-shadow:
+            0 0 28px #ff5ca8,
+            0 0 50px rgba(255,20,120,.5);
+
+    }
+
+}
+
+
+/* NO */
+
+#no,
+#no2{
+
+    background:linear-gradient(
+        135deg,
+        #541537,
+        #812653,
+        #a52f69
+    );
+
+    color:white;
+
+    position:relative;
+
+}
+
+
+/* =========================================================
+   LOADING SCREEN
+========================================================= */
+
+#loading{
+
+    position:fixed;
+
+    inset:0;
+
+    background:#020208;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    flex-direction:column;
+
+    z-index:999999;
+
+    transition:
+        opacity .8s ease,
+        visibility .8s ease;
+
+}
+
+#loading.hide{
+
+    opacity:0;
+
+    visibility:hidden;
+
+    pointer-events:none;
+
+}
+
+.loaderCake{
+
+    font-size:75px;
+
+    animation:loaderBeat 1s infinite;
+
+}
+
+@keyframes loaderBeat{
+
+    0%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.15);
+    }
+
+    100%{
+        transform:scale(1);
+    }
+
+}
+
+.loadingText{
+
+    margin-top:15px;
+
+    color:#ff72b5;
+
+    text-shadow:
+        0 0 10px #ff3d88,
+        0 0 25px #ff3d88;
+
+}
+
+
+/* =========================================================
+   GLOW
+========================================================= */
+
+.glowText{
+
+    animation:glow 2s infinite alternate;
+
+}
+
+@keyframes glow{
+
+    from{
+
+        text-shadow:
+            0 0 10px #ff8ec8;
+
+    }
+
+    to{
+
+        text-shadow:
+            0 0 20px #ff8ec8,
+            0 0 40px #ff4f9a,
+            0 0 60px #ff176f;
+
+    }
+
+}
+
+
+/* =========================================================
+   MUSIC BUTTON
+========================================================= */
+
+.musicBtn{
+
+    position:fixed;
+
+    top:15px;
+    right:15px;
+
+    z-index:100000;
+
+    padding:10px 18px;
+
+    font-size:15px;
+
+    background:linear-gradient(
+        135deg,
+        #b8175c,
+        #ed4b9b
+    );
+
+    color:white;
+
+    box-shadow:
+        0 0 15px rgba(255,70,150,.5);
+
+}
+
+
+/* =========================================================
+   FLOATING STARS
+========================================================= */
+
+.star{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:1;
+
+    color:#fff;
+
+    animation:
+        twinkle 2s ease-in-out infinite alternate,
+        starDrift 6s ease-in-out infinite;
+
+}
+
+@keyframes twinkle{
+
+    from{
+        opacity:.15;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+@keyframes starDrift{
+
+    0%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0);
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING HEARTS / BALLOONS / SPARKLES
+========================================================= */
+
+.floatingItem{
+
+    position:fixed;
+
+    bottom:-80px;
+
+    pointer-events:none;
+
+    z-index:5;
+
+    will-change:transform,opacity;
+
+    animation:
+        floatBirthday var(--duration)
+        linear forwards;
+
+}
+
+@keyframes floatBirthday{
+
+    0%{
+
+        transform:
+            translate3d(
+                0,
+                0,
+                0
+            )
+            rotate(0deg);
+
+        opacity:0;
+
+    }
+
+    10%{
+        opacity:1;
+    }
+
+    50%{
+
+        transform:
+            translate3d(
+                var(--drift),
+                -55vh,
+                0
+            )
+            rotate(8deg);
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+            translate3d(
+                calc(var(--drift) * -1),
+                -125vh,
+                0
+            )
+            rotate(-8deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
+   BIRTHDAY CAKE
+========================================================= */
+
+.cakeWrap{
+
+    position:relative;
+
+    width:230px;
+
+    height:230px;
+
+    margin:10px auto 20px;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:flex-end;
+
+}
+
+
+/* Cake */
+
+.cake{
+
+    position:absolute;
+
+    bottom:25px;
+
+    width:180px;
+
+    height:100px;
+
+    background:linear-gradient(
+        180deg,
+        #ff8fba,
+        #d93678
+    );
+
+    border-radius:
+        15px 15px 20px 20px;
+
+    box-shadow:
+        0 0 30px rgba(255,70,150,.5);
+
+}
+
+
+/* cake top */
+
+.cakeTop{
+
+    position:absolute;
+
+    top:-18px;
+
+    left:0;
+
+    width:180px;
+
+    height:40px;
+
+    border-radius:50%;
+
+    background:
+        radial-gradient(
+            ellipse,
+            #ffb9d6,
+            #ed4b9b
+        );
+
+}
+
+
+/* cream */
+
+.cream{
+
+    position:absolute;
+
+    top:8px;
+
+    left:15px;
+
+    width:150px;
+
+    height:35px;
+
+    border-radius:50%;
+
+    background:#ffbddb;
+
+}
+
+
+/* cake decoration */
+
+.dot{
+
+    position:absolute;
+
+    width:8px;
+    height:8px;
+
+    border-radius:50%;
+
+    background:#fff;
+
+}
+
+.dot1{
+    left:30px;
+    top:48px;
+}
+
+.dot2{
+    left:75px;
+    top:65px;
+}
+
+.dot3{
+    right:35px;
+    top:45px;
+}
+
+.dot4{
+    right:70px;
+    top:70px;
+}
+
+
+/* =========================================================
+   CANDLE
+========================================================= */
+
+.candle{
+
+    position:absolute;
+
+    bottom:123px;
+
+    width:18px;
+
+    height:65px;
+
+    background:repeating-linear-gradient(
+        45deg,
+        #fff,
+        #fff 7px,
+        #ff4f93 7px,
+        #ff4f93 14px
+    );
+
+    border-radius:4px;
+
+    z-index:4;
+
+}
+
+
+/* wick */
+
+.wick{
+
+    position:absolute;
+
+    top:-8px;
+
+    left:7px;
+
+    width:3px;
+
+    height:9px;
+
+    background:#222;
+
+}
+
+
+/* flame */
+
+.flame{
+
+    position:absolute;
+
+    top:-43px;
+
+    left:2px;
+
+    width:14px;
+
+    height:28px;
+
+    background:linear-gradient(
+        180deg,
+        #fff,
+        #ffd43b,
+        #ff6b00
+    );
+
+    border-radius:
+        50% 50% 50% 50% /
+        60% 60% 40% 40%;
+
+    box-shadow:
+        0 0 10px #ffd43b,
+        0 0 25px #ff9d00,
+        0 0 40px rgba(255,120,0,.7);
+
+    animation:flameDance .18s infinite alternate;
+
+    transform-origin:bottom center;
+
+}
+
+@keyframes flameDance{
+
+    from{
+        transform:rotate(-4deg) scaleY(1);
+    }
+
+    to{
+        transform:rotate(4deg) scaleY(1.1);
+    }
+
+}
+
+
+/* =========================================================
+   SMOKE
+========================================================= */
+
+.smoke{
+
+    position:absolute;
+
+    top:-58px;
+
+    left:4px;
+
+    width:12px;
+
+    height:12px;
+
+    border-radius:50%;
+
+    background:rgba(210,210,210,.7);
+
+    opacity:0;
+
+    pointer-events:none;
+
+}
+
+.smoke::before,
+.smoke::after{
+
+    content:"";
+
+    position:absolute;
+
+    width:14px;
+    height:14px;
+
+    border-radius:50%;
+
+    background:rgba(200,200,200,.5);
+
+}
+
+.smoke::before{
+    left:-7px;
+    top:8px;
+}
+
+.smoke::after{
+    left:7px;
+    top:12px;
+}
+
+
+/* candle blown state */
+
+.candle.blown .flame{
+
+    display:none;
+
+}
+
+.candle.blown .smoke{
+
+    animation:smokeRise 2.5s ease-out forwards;
+
+}
+
+@keyframes smokeRise{
+
+    0%{
+
+        opacity:.8;
+
+        transform:
+            translate(0,0)
+            scale(.6);
+
+    }
+
+    40%{
+
+        opacity:.6;
+
+    }
+
+    100%{
+
+        opacity:0;
+
+        transform:
+            translate(25px,-90px)
+            scale(2.5);
+
+    }
+
+}
+
+
+/* =========================================================
+   BLOW BUTTON
+========================================================= */
+
+.blowBtn{
+
+    background:linear-gradient(
+        135deg,
+        #c2185b,
+        #ed4b9b,
+        #ff76ba
+    );
+
+    box-shadow:
+        0 0 20px rgba(255,80,160,.55);
+
+}
+
+
+/* =========================================================
+   WISH TEXT
+========================================================= */
+
+.wishText{
+
+    color:#ff68aa;
+
+    font-size:1.25rem;
+
+    text-shadow:
+        0 0 6px rgba(255,50,140,.8);
+
+}
+
+
+/* =========================================================
+   FINAL MESSAGE
+========================================================= */
+
+.finalMessage{
+
+    max-width:750px;
+
+    font-size:1.25rem;
+
+    line-height:2;
+
+    color:#ff68aa;
+
+    text-shadow:
+        0 0 3px #ff006e,
+        0 0 8px rgba(255,80,160,.65);
+
+}
+
+
+/* =========================================================
+   KITTY STICKERS
+========================================================= */
+
+.kitty{
+
+    position:fixed;
+
+    font-size:55px;
+
+    pointer-events:none;
+
+    z-index:6;
+
+    animation:
+        kittyFloat 4s ease-in-out infinite;
+
+}
+
+.kitty1{
+
+    left:5%;
+
+    bottom:8%;
+
+    animation-delay:.2s;
+
+}
+
+.kitty2{
+
+    right:5%;
+
+    top:18%;
+
+    animation-delay:1s;
+
+}
+
+.kitty3{
+
+    right:7%;
+
+    bottom:7%;
+
+    animation-delay:1.7s;
+
+}
+
+.kitty4{
+
+    left:7%;
+
+    top:17%;
+
+    animation-delay:2.2s;
+
+}
+
+@keyframes kittyFloat{
+
+    0%{
+        transform:translateY(0) rotate(-3deg);
+    }
+
+    50%{
+        transform:translateY(-12px) rotate(3deg);
+    }
+
+    100%{
+        transform:translateY(0) rotate(-3deg);
+    }
+
+}
+
+
+/* =========================================================
+   FLOATING MESSAGE
+========================================================= */
+
+#floatingText{
+
+    position:fixed;
+
+    top:11%;
+
+    left:50%;
+
+    transform:translateX(-50%);
+
+    padding:14px 24px;
+
+    border-radius:40px;
+
+    font-size:20px;
+
+    color:#fff;
+
+    background:rgba(25,3,20,.88);
+
+    border:1px solid rgba(255,100,180,.35);
+
+    box-shadow:
+        0 0 20px rgba(255,50,150,.5);
+
+    opacity:0;
+
+    transition:opacity .4s ease;
+
+    z-index:999998;
+
+    max-width:90%;
+
+    text-align:center;
+
+}
+
+
+/* =========================================================
+   NO BUTTON SHAKE
+========================================================= */
+
+@keyframes noShake{
+
+    0%{
+        transform:translateX(0);
+    }
+
+    25%{
+        transform:translateX(-5px);
+    }
+
+    50%{
+        transform:translateX(5px);
+    }
+
+    75%{
+        transform:translateX(-5px);
+    }
+
+    100%{
+        transform:translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   FINAL CELEBRATION
+========================================================= */
+
+.celebrationBurst{
+
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:9999;
+
+    font-size:25px;
+
+    animation:
+        burst 2.2s ease-out forwards;
+
+}
+
+@keyframes burst{
+
+    0%{
+
+        transform:
+            translate(0,0)
+            scale(.3);
+
+        opacity:1;
+
+    }
+
+    60%{
+
+        opacity:1;
+
+    }
+
+    100%{
+
+        transform:
+            translate(
+                var(--x),
+                var(--y)
+            )
+            scale(1.2);
+
+        opacity:0;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media(max-width:600px){
+
+    .page{
+
+        padding:22px 18px;
+
+    }
+
+    p{
+
+        font-size:1.03rem;
+
+        line-height:1.7;
+
+    }
+
+    .kitty{
+
+        font-size:40px;
+
+    }
+
+    .kitty1{
+        left:2%;
+        bottom:4%;
+    }
+
+    .kitty2{
+        right:2%;
+        top:15%;
+    }
+
+    .kitty3{
+        right:2%;
+        bottom:4%;
+    }
+
+    .kitty4{
+        left:2%;
+        top:15%;
+    }
+
+    button{
+
+        font-size:17px;
+
+        padding:13px 24px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar{
+    width:0;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =======================================================
+     LOADING
+======================================================= -->
+
+<div id="loading">
+
+    <div class="loaderCake">
+        🎂
+    </div>
+
+    <h2 class="loadingText">
+        Preparing a little birthday surprise...
+    </h2>
+
+    <p class="softText">
+        Just for my Gulabii ❤️
+    </p>
+
+</div>
+
+
+<!-- MUSIC -->
+
+<button class="musicBtn" id="musicBtn">
+    🎵 Music
+</button>
+
+
+<!-- FLOATING MESSAGE -->
+
+<div id="floatingText"></div>
+
+
+<!-- =======================================================
+     KITTY STICKERS
+======================================================= -->
+
+<div class="kitty kitty1">😽🎀</div>
+
+<div class="kitty kitty2">😻🎂</div>
+
+<div class="kitty kitty3">😸🎈</div>
+
+<div class="kitty kitty4">😺💗</div>
+
+
+<!-- =======================================================
+     PAGE 1
+======================================================= -->
+
+<div class="page active" id="page1">
+
+    <div style="font-size:65px;margin-bottom:10px;">
+        🎀😽🎀
+    </div>
+
+    <h1 class="glowText">
+        🎂 A Little Birthday Journey 🎂
+    </h1>
+
+    <p>
+        Some people enter our lives
+        and slowly become a place
+        where our heart feels at home.
+    </p>
+
+    <p>
+        And then there is you,
+        my Gulabii...
+    </p>
+
+    <p>
+        My Kuchu,
+        my favourite little person,
+        and someone whose smile
+        I would happily celebrate
+        a thousand times.
+    </p>
+
+    <p>
+        So today,
+        I made you a tiny little journey...
+        just so I could tell you
+        how special you are to me.
+    </p>
+
+    <button class="nextBtn"
+            onclick="showPage(2)">
+
+        Open Your Birthday Surprise 💌
+
+    </button>
+
+</div>
+
+
+<!-- =======================================================
+     PAGE 2
+======================================================= -->
+
+<div class="page" id="page2">
+
+    <h2>
+        💌 For My Gulabii
+    </h2>
+
+    <p>
+        Happy Birthday,
+        my beautiful Gulaabii. 🌹
+    </p>
+
+    <p>
+        I hope you know that
+        your birthday isn't just another day
+        on my calendar.
+    </p>
+
+    <p>
+        It is the day
+        the world got a little more beautiful
+        because you came into it.
+    </p>
+
+    <p>
+        And somehow,
+        I got lucky enough
+        to have you become
+        such a precious part of my life.
+    </p>
+
+    <p>
+        So today,
+        I don't just want to wish you
+        a Happy Birthday.
+    </p>
+
+    <p>
+        I want to celebrate
+        <b>you.</b> ❤️
+    </p>
+
+    <button class="nextBtn"
+            onclick="showPage(3)">
+
+        Keep Going, Birthday Kuchu 🎀
+
+    </button>
+
+</div>
+
+
+<!-- =======================================================
+     PAGE 3
+======================================================= -->
+
+<div class="page" id="page3">
+
+    <h2>
+        🌙 A Little Birthday Wish
+    </h2>
+
+    <p>
+        My Kuchu...
+    </p>
+
+    <p>
+        I hope this new year of your life
+        is gentler with you.
+    </p>
+
+    <p>
+        I hope you get
+        more reasons to laugh,
+        more moments to feel proud,
+        more adventures to remember,
+        and more peaceful nights.
+    </p>
+
+    <p>
+        I hope the things
+        you've secretly wished for
+        slowly find their way
+        into your hands.
+    </p>
+
+    <p>
+        And whenever life becomes difficult,
+        I hope you remember
+        just how loved you are.
+    </p>
+
+    <p>
+        Especially by
+        your Kishmishii. ❤️
+    </p>
+
+    <button class="nextBtn"
+            onclick="showPage(4)">
+
+        There Is Something Special 🎁
+
+    </button>
+
+</div>
+
+
+<!-- =======================================================
+     PAGE 4
+======================================================= -->
+
+<div class="page" id="page4">
+
+    <h2 class="glowText">
+        🎈 Birthday Girl Alert 🎈
+    </h2>
+
+    <p>
+        Today you are officially allowed
+        to be spoiled.
+    </p>
+
+    <p>
+        Allowed to smile too much.
+        Allowed to eat too much cake.
+        Allowed to make wishes.
+        Allowed to be ridiculously cute.
+    </p>
+
+    <p>
+        And most importantly...
+    </p>
+
+    <p>
+        you are allowed to know
+        that someone out here
+        loves you a little more
+        than words can explain.
+    </p>
+
+    <p>
+        So before we continue,
+        I have one tiny question...
+    </p>
+
+    <p>
+        Are you ready for your cake,
+        birthday Kuchu? 🎂
+    </p>
+
+    <button class="nextBtn"
+            onclick="showPage(5)">
+
+        Bring Me The Cake 🎂
+
+    </button>
+
+</div>
+
+
+<!-- ============================================
